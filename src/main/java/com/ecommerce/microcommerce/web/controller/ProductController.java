@@ -115,6 +115,7 @@ public class ProductController {
     }
 
 
+//    partie 1
     @GetMapping("/AdminProduits")
     public Map calculerMargeProduit(){
 
@@ -127,6 +128,15 @@ public class ProductController {
 
       return result;
 
+    }
+
+
+//  partie 2
+    @GetMapping("/Order")
+    public List<Product> trierProduitsParOrdreAlphabetique(){
+
+
+        return productDao.findAllByIdIsNotNullOrderByNom();
     }
 
 
